@@ -1,0 +1,97 @@
+# ==============================================================================
+# Python Bytecode and Caches
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================================================================
+# Virtual Environments (Local dependencies)
+# ==============================================================================
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# Environment Variables and Secrets (Never commit API keys!)
+# ==============================================================================
+.env
+.env.local
+.env.*.local
+*.env
+*.secrets
+
+# ==============================================================================
+# Distribution / Packaging (Build artifacts)
+# ==============================================================================
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==============================================================================
+# Jupyter Notebook Checkpoints
+# ==============================================================================
+.ipynb_checkpoints
+
+# ==============================================================================
+# IDEs and Text Editors
+# ==============================================================================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (PyCharm)
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# Django Specific Rules
+# ==============================================================================
+# Local development databases (SQLite)
+*.sqlite3
+*.sqlite3-journal
+
+# User-uploaded files (Media directory)
+# Keeps your uploads local; production should use cloud storage like AWS S3
+media/
+/media/
+
+# Static files collected by 'python manage.py collectstatic'
+static_root/
+staticfiles/
+/static/
+
+# Django debug toolbar or logging files
+*.log
+local_settings.py
+
+# Celery task queue configurations (if used)
+celerybeat-schedule
+celerybeat.pid
