@@ -7,5 +7,4 @@ def home(request):
 
 
 def about(request):
-    a = 50
-    return HttpResponse(f"About page: {a}")
+    return HttpResponse(f"Welcome to Blog about page")
