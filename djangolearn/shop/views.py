@@ -9,3 +9,6 @@ def home(request):
 
 def product(request):
     return HttpResponse(f"Welcome to Shop Product page")
+
+def product_list(request):
+    return render(request, "shop/product_list.html")
