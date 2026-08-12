@@ -21,6 +21,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 # from blog import views # Function views
 # from blog.views import home, about # Class based
 
@@ -45,6 +46,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
     path('blog/', include('blog.urls')),
     path('shop/', include('shop.urls'))
 ]
