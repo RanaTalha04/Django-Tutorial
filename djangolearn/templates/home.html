@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>{% block title %} My Django  Project {% endblock %}</title>
 </head>
 <body>
     <h1>Welcome to my Project</h1>
-    <p>This is the base template for my django Project.</p>
+    <hr>
+    {% block content %} {% endblock %}
 </body>
 </html>
