@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1>Here is dynamic data: </h1>
+<h1>Basics and Variables: </h1>
 
 <h3>Variable Access: </h3>
 <p>Name: {{name}}</p>
@@ -38,7 +38,68 @@
 {% comment %} Default Values {% endcomment %}
 
 <h3>Default Values: </h3>
-<p>Default Value: {{empty_value|default:"No value provided"}}</p>
+<p>Default Value: {{updated_content|default:"No value provided"}}</p>
 
+<h1>Filters</h1>
+
+{% comment %} Text Filter {% endcomment %}
+
+<h3>Text Filters: </h3>
+
+<p>Normal Text: {{blog.title}}</p>
+<p>Upper Case Text: {{blog.title|upper}}</p>
+<p>Lower Case Text: {{blog.title|lower}}</p>
+<p>Capital Text: {{blog.title|capfirst}}</p>
+<p>Title Text: {{blog.title|title}}</p>
+<p>Truncate Characters: {{blog.title|truncatechars:10}}</p>
+<p>Truncate Words: {{blog.title|truncatewords:2}}</p>
+<p>Linebreaks: {{blog.title|linebreaks}}</p>
+
+{% comment %} Number Filter {% endcomment %}
+
+<h3>Number Filters: </h3>
+
+<p>Original number of viewers: {{viewers}} and subscribers: {{subscription}}</p>
+<p>Additional subscriber (+5): {{subscription | add:5}}</p>
+<h4>Division Logic:</h4>
+{% if viewers|divisibleby:2 %}
+<p> Viewers: {{viewers}} and are even.</p>
+{% else %}
+<p> Viewers: {{viewers}} and are odd.</p>
+{% endif %}
+
+{% comment %} List Filter {% endcomment %}
+
+<h3>List Filters: </h3>
+
+<p>Full Skills list: {{skills}}</p>
+<p>First Skill: {{skills|first}}</p>
+<p>Last Skill: {{skills|last}}</p>
+<p>Number of skills: {{skills|length}}</p>
+<p>Slicing skills: {{skills|slice:"1:2"}}</p>
+<p>Joining skills: {{skills|join:", "}}</p>
+
+{% comment %} Yes/No & Pluralization {% endcomment %}
+
+<h3>Yes/No and Pluralization</h3>
+
+<p>Is content updated? {{updated_content|yesno:"Yes,No,Maybe"}}</p>
+<p>Comment Count: {{comment_count}} Comment{{comment_count|pluralize}}</p>
+
+{% comment %} Date/Time Filters {% endcomment %}
+
+<h3>Date/Time Filters: </h3>
+
+<p>Blog Creation Date and Time: {{blog.created_at}}</p>
+<p>Blog Formated Date: {{blog.created_at|date:"D, d/M/Y"}}</p>
+<p>Blog Formated Time: {{blog.created_at|time:"H:i"}}</p>
+<p>Blog Time Since: {{blog.created_at|timesince}} ago.</p>
+<p>Blog Time Until: {{blog.created_at|timeuntil}}. </p>
+
+{% comment %} Encoding and Formating {% endcomment %}
+
+<h3>Encoding and Formating: </h3>
+<p>Title Encoding: {{blog.title|urlencode}}</p>
+<p>Fload Formatiing: {{12.456789098654|floatformat:2}}</p>
 
 {% endblock %}

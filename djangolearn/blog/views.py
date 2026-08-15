@@ -19,10 +19,15 @@ def home(request):
             "content": "This is the first django blog",
             "created_at": datetime(2026, 8, 15, 11, 5)
         },
-        "empty_value": None,
-        "bold_value": "<b>This is bold value</b>"
+        "updated_content": "no",
+        "bold_value": "<b>This is bold value</b>",
+        "viewers": 100,
+        "subscription": 27,
+        "comment_count": 5,
+        
     }
     return render(request, "blog/home.html", context)
+
     
 
 
